@@ -2,13 +2,6 @@ Kansas SOS Business Data Crawler 🏢
 
 Automated Business Intelligence Extraction for Kansas Secretary of State
 
-
-
-
-
-
-
-
 📌 Table of Contents
 
 Overview
@@ -41,7 +34,7 @@ Developer
 
 🚀 Overview
 
-The Kansas SOS Business Data Crawler is an enterprise-grade automation tool that extracts structured business intelligence from the Kansas Secretary of State website including:
+The Kansas SOS Business Data Crawler is an enterprise-grade automation tool that extracts structured business intelligence from the Kansas Secretary of State website, including:
 
 Entity identification
 
@@ -98,8 +91,8 @@ HTML fallback for debugging
 
 🏗️ Architecture
 Navigation Flow
-Homepage → CAPTCHA → Search Page → Input Parameters →  
-Search Results → Business Details → JSON Storage
+
+Homepage → CAPTCHA → Search Page → Input Parameters → Search Results → Business Details → JSON Storage
 
 Extraction Strategy
 
@@ -107,7 +100,7 @@ Primary: CSS-based element extraction
 
 Secondary: Table parsing
 
-Tertiary: Text + Regex interpretation
+Tertiary: Regex & text interpretation
 
 📁 Project Structure
 kansas_business_data/
@@ -133,7 +126,7 @@ python sos_crawler.py
 Category	Search Terms	Purpose
 Test Samples	AA, AAB, AAC	System validation
 Corporate Entities	LLC, INC, CORP	General business data
-Industry Focus	SERVICE, KANSAS	Local & service industries
+Industry Focus	SERVICE, KANSAS	Local & service industry
 📊 Data Schema
 Sample JSON Output
 {
@@ -168,7 +161,7 @@ Sample JSON Output
 Search Terms
 search_terms = ["AA", "AAB", "AAC", "LLC", "INC", "CORP", "SERVICE", "KANSAS"]
 
-Limit number of processed businesses
+Limit Processed Businesses
 for business in businesses[:3]:
     process_business(business)
 
@@ -190,7 +183,9 @@ Cost per CAPTCHA → $0.00077
 
 $2.87 balance → 3,726 CAPTCHAs
 
-1–3 per business → 1,200–3,700 businesses
+Usage per business → 1–3 CAPTCHAs
+
+Total capacity → 1,200–3,700 businesses
 
 🔧 Technical Specifications
 Requirements
@@ -201,9 +196,9 @@ Playwright + Chromium
 
 2GB RAM recommended
 
-Stable internet
+Stable internet connection
 
-Extracted Elements (30+ fields)
+Extracted Fields (30+)
 
 IDs
 
@@ -224,39 +219,39 @@ Automatic retries
 
 Fallback extraction layers
 
-Session recovery
+Session restoration
 
 Maintenance
 
-Validation rules
+Validation rule testing
 
-Storage management
+Storage cleanup
 
-Routine dependency checks
+Dependency updates
 
 🔒 Privacy & Legal Compliance
 
-Please ensure:
+Please ensure you:
 
-You respect Kansas SOS Terms of Service
+Respect Kansas SOS Terms of Service
 
-Apply rate limiting
+Follow rate limits
 
 Use data ethically & legally
 
-Follow 2Captcha service terms
+Follow 2Captcha usage terms
 
 🚀 Advanced Features
-Add more search terms
+Add More Search Terms
 search_terms = ["LLC", "INC", "CORP", "CO", "LP", "LLP", "PC"]
 
-Add custom fields
+Add Custom Fields
 custom_fields = {
     "tax_id": "#TaxIDSelector",
     "license_number": "#LicenseSelector"
 }
 
-Implement retry strategy
+Retry Logic
 max_retries = 3
 retry_delay = 5
 
