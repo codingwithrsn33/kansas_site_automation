@@ -35,11 +35,7 @@ The Kansas SOS Business Crawler automates the extraction of business entity info
 ## 🏗️ Architecture
 
 ### Navigation Flow
-Homepage (sos.ks.gov) → CAPTCHA Check → Search Page →
-Automated Setup → Search Execution → Results Processing →
-Business Detail Extraction → Structured Storage
-
-text
+Homepage (sos.ks.gov) → CAPTCHA Check → Search Page → Automated Setup → Search Execution → Results Processing → Business Detail Extraction → Structured Storage
 
 ### Extraction Strategy
 1. **Primary Method**: Direct element targeting using known CSS selectors
@@ -113,8 +109,6 @@ json
     "data_completeness": "complete"
   }
 }
-
-
 ⚙️ Configuration
 Search Parameters
 Modify the search terms in the main execution method:
@@ -294,3 +288,4 @@ Python Developer
 📞 +91 9075237180
 📧 rohandarekar307@gmail.com
 🔗 GitHub Profile
+
