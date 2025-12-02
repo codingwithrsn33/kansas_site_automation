@@ -1,82 +1,126 @@
-echo '# Kansas SOS Business Data Crawler 🏢
+# Kansas SOS Business Crawler 🏢
 
-A comprehensive automation solution for business intelligence gathering from the Kansas Secretary of State website. This enterprise-grade tool systematically extracts business entity data with intelligent navigation, CAPTCHA solving, and professional output management.
+A sophisticated automation solution for comprehensive business intelligence gathering from the Kansas Secretary of State website. This enterprise-grade tool systematically extracts and structures business entity data with **advanced CAPTCHA solving capabilities**, robust error handling, and professional output management.
 
 ## 🚀 Overview
-The Kansas SOS Business Crawler automates the extraction of business entity information through intelligent web navigation, multi-layered data extraction, and comprehensive error management. It transforms unstructured web data into structured, analyzable business intelligence.
+
+The Kansas SOS Business Crawler is designed to automate the extraction of business entity information through intelligent web navigation, **automatic CAPTCHA resolution**, multi-layered data extraction, and comprehensive error management. It transforms unstructured web data into structured, analyzable business intelligence.
 
 ## ✨ Key Features
 
 ### 🤖 Intelligent Automation
-- **Smart Navigation**: Natural browsing from homepage to business search with CAPTCHA handling
+- **Smart Navigation**: Natural browsing pattern from homepage to business search
 - **Form Automation**: Automated search parameter configuration
-- **Dynamic Detection**: Adaptive element identification with multiple fallback strategies
-- **CAPTCHA Management**: Automatic solving with 2Captcha integration
+- **Dynamic Element Detection**: Adaptive element identification with multiple fallback strategies
+- **CAPTCHA Automation**: Integrated 2Captcha service for automatic solving
+
+### 🛡️ CAPTCHA Management
+- **Automatic Solving**: 2Captcha API integration for reCAPTCHA v2
+- **Manual Fallback**: Built-in manual solving option when automated service fails
+- **Balance Tracking**: Real-time monitoring of 2Captcha balance and cost estimation
+- **Multi-point Protection**: CAPTCHA detection at navigation, search, and detail pages
 
 ### 📊 Comprehensive Data Extraction
 - **Business Identification**: Entity names, IDs, and registration details
 - **Entity Classification**: Business types, status, and jurisdiction information
-- **Contact Information**: Resident agents and complete office addresses
+- **Contact Information**: Resident agents and office addresses
 - **Compliance Data**: Reporting requirements and filing deadlines
-- **Metadata**: Extraction timestamps and source tracking
 
 ### 🛡️ Enterprise Reliability
 - **Multi-layer Error Handling**: Primary, secondary, and tertiary extraction methods
-- **CAPTCHA Management**: Automated solving with manual intervention fallback
 - **Session Persistence**: Robust recovery from interruptions and timeouts
 - **Data Validation**: Completeness checking and quality assurance
 
 ### 💾 Professional Output
-- **Structured JSON**: Clean, normalized business data (30+ fields)
+- **Structured JSON**: Clean, normalized business data
 - **Hierarchical Storage**: Organized by extraction status and data type
 - **Audit Trail**: Comprehensive logging and activity monitoring
-- **HTML Fallback**: Source preservation for debugging
 
-## 🏗️ Architecture
+## 🔧 Automation & CAPTCHA Features
 
-### Navigation Flow
-Homepage (sos.ks.gov) → CAPTCHA Check → Search Page →
-Automated Setup → Search Execution → Results Processing →
-Business Detail Extraction → Structured Storage
+### 🎯 Automated CAPTCHA Solving
+The crawler features **built-in CAPTCHA automation** using the 2Captcha service:
 
+```python
+# 2Captcha Integration Example
+self.solver = TwoCaptcha(API_KEY)
+result = self.solver.recaptcha(
+    sitekey=site_key,
+    url=page_url
+)
+```
+⚡ Performance Metrics
+CAPTCHA Success Rate: 95%+ with 2Captcha integration
+
+Solving Time: 10-30 seconds per CAPTCHA
+
+Cost Efficiency: $0.00077 per CAPTCHA (~3,800 solves per $3)
+
+Balance Management: Automatic balance checking and warnings
+
+🔄 Fallback Mechanisms
+Primary: 2Captcha automated solving
+
+Secondary: Manual solving with user prompts
+
+Tertiary: Session recovery and retry logic
+
+🏗️ Architecture
+Navigation Flow
 text
+Homepage (sos.ks.gov) → CAPTCHA Check → Business Search → 
+Automated Setup → CAPTCHA Check → Search Execution → 
+Data Extraction → Structured Storage
+Extraction Strategy
+Primary Method: Direct element targeting using known CSS selectors
 
-### Extraction Strategy
-1. **Primary Method**: Direct element targeting using known CSS selectors
-2. **Secondary Method**: Table-based parsing and pattern recognition
-3. **Tertiary Method**: Text analysis and regular expression matching
+Secondary Method: Table-based parsing and pattern recognition
 
-### Project Structure
-kansas_business_data/
-├── 📊 json/ # Individual business JSON files
-├── 🔧 html_fallback/ # HTML files when JSON fails
-├── 📝 errors/ # Error logs and failed extractions
-├── 📋 logs/ # Application logs
-├── 📸 screenshots/ # Debug screenshots
-└── 📁 all_businesses_[timestamp].json # Combined dataset
+Tertiary Method: Text analysis and regular expression matching
 
+CAPTCHA Flow
 text
-
-## 🚀 Getting Started
-
-### Installation
-```bash
-# clone repository
-git clone https://github.com/codingbithrens3/Kansas-Site-Crawling.git
+CAPTCHA Detection → Site Key Extraction → 2Captcha API Call → 
+Response Injection → Solution Verification → Continue Automation
+🚀 Getting Started
+Installation
+bash
+# Clone repository
+git clone https://github.com/codingwithrsn33/Kansas-Site-Crawling.git
 cd Kansas-Site-Crawling
 
-# install dependencies
+# Install dependencies
 pip install playwright twocaptcha
 
-# install playwright browsers
+# Install Playwright browsers
 playwright install chromium
 
-# optional: Set up 2Captcha API key
+# Optional: Configure 2Captcha API key
 export CAPTCHA_API_KEY="your_2captcha_api_key_here"
-```
 Execution
 bash
 python sos_crawler.py
+⚙️ Automation Configuration
+2Captcha Setup
+Sign Up: Register at 2captcha.com
+
+Add Funds: Minimum $3 recommended (~3,800 CAPTCHAs)
+
+API Integration: Add your API key to the crawler
+
+python
+# Configuration in sos_crawler.py
+self.captcha_api_key = "9f5b2e46ccade5230e0f09f590e1960a"
+Performance Settings
+python
+# For faster crawling (with CAPTCHA solving)
+self.micro_delay(0.2, 0.5)  # Shorter delays between actions
+
+# For reliable crawling (recommended)
+self.reliable_delay(2, "CAPTCHA processing")  # Documented delays
+
+# CAPTCHA solving timeout
+self.captcha_timeout = 30  # Seconds to wait for CAPTCHA solution
 📋 Default Search Configuration
 The system automatically processes these business entity types:
 
@@ -84,6 +128,19 @@ Category	Search Terms	Target Entities
 Test Samples	AA, AAB, AAC	Validation and testing
 Corporate Entities	LLC, INC, CORP	Business structures
 Industry Focus	SERVICE, KANSAS	Regional and service businesses
+📁 Output Structure
+text
+kansas_business_data/
+├── 📊 json/                           # Successful extractions
+│   └── business_{name}_{timestamp}.json
+├── 🔧 html_fallback/                  # Source preservation
+│   └── {context}_{timestamp}.html
+├── 📝 errors/                         # Diagnostic information
+│   ├── error_{term}_{timestamp}.json
+│   └── diagnostic_data/
+├── 📸 screenshots/                    # Debug screenshots
+├── 📋 crawler.log                     # System activity
+└── 📊 captcha_stats.json             # CAPTCHA solving statistics
 📊 Data Schema
 Business Entity Record
 json
@@ -104,14 +161,17 @@ json
   },
   "contact_information": {
     "resident_agent": "John Doe",
-    "principal_office_address": "123 Main St | Kansas City, KS 66101",
-    "registered_office_address": "456 Registered Ave | Overland Park, KS 66204"
+    "principal_office_address": "123 Main St, Kansas City, KS 66101"
+  },
+  "automation_metadata": {
+    "captcha_solved": true,
+    "captcha_method": "2captcha",
+    "solving_time_seconds": 15.5
   },
   "metadata": {
     "extraction_timestamp": "2024-01-15T10:30:00Z",
     "search_term": "LLC",
-    "processing_status": "success",
-    "data_completeness": "complete"
+    "processing_status": "success"
   }
 }
 ⚙️ Configuration
@@ -119,35 +179,46 @@ Search Parameters
 Modify the search terms in the main execution method:
 
 python
-search_terms = ["AA", "AAB", "AAC", "LLC", "INC", "CORP", "SERVICE", "KANSAS"]
+search_terms = [
+    "LLC", "INC", "CORP", 
+    "SERVICE", "CONSTRUCTION",
+    "CONSULTING", "TECHNOLOGY"
+]
 Processing Limits
 Adjust the number of entities processed per search term:
 
 python
-# Process first 3 businesses per search term
-for business in businesses[:3]:
+# Process first 5 businesses per search term
+for business in businesses[:5]:
     process_business(business)
-CAPTCHA Configuration
+CAPTCHA Settings
 python
-# Enable 2Captcha service
-self.captcha_api_key = "your_2captcha_api_key"
+# Enable/disable automated CAPTCHA solving
+self.use_captcha_solver = True
 
-# Or use manual fallback
-self.solver = None  # Disable automated solving
+# Set manual solving preference
+self.manual_captcha_fallback = True
+
+# Configure solving attempts
+self.max_captcha_attempts = 3
 🎯 Performance Features
 Rate Management
-Configurable delays between requests (0.2-1.5 seconds)
+Configurable delays between requests
 
 Respectful crawling practices
 
 Adaptive timing based on response patterns
+
+CAPTCHA-aware rate limiting
 
 Quality Assurance
 Data validation at extraction points
 
 Cross-reference verification
 
-Completeness scoring for each record
+Completeness scoring
+
+CAPTCHA success rate monitoring
 
 Monitoring
 Real-time progress tracking
@@ -156,30 +227,34 @@ Success rate analytics
 
 Performance metrics collection
 
-CAPTCHA solving statistics
+CAPTCHA cost tracking
 
-📈 Performance Metrics
-Time Estimates
+📈 Automation Performance
+Time Estimates (with CAPTCHA)
 Component	Fast Mode	Reliable Mode
-Navigation	2-3 sec	5-10 sec
-Search Setup	1 sec	2-3 sec
+Navigation + CAPTCHA	10-15 sec	15-25 sec
+Search Setup	1-2 sec	2-3 sec
 Results Extraction	1-2 sec	3-5 sec
 Business Detail	2-3 sec	5-8 sec
-Total per Business	~5 sec	~15 sec
-2Captcha Cost Analysis
+Total per Business	~15 sec	~30 sec
+CAPTCHA Cost Analysis
 Cost per CAPTCHA: $0.00077
 
-Balance $2.87: ≈ 3,726 CAPTCHAs
+Typical Balance: $2.87 ≈ 3,726 CAPTCHAs
 
-Usage per Business: 1-3 CAPTCHAs
+Usage Pattern: 1-3 CAPTCHAs per business
 
-Total Businesses Possible: 1,200-3,700
+Business Capacity: 1,200-3,700 businesses per $3
+
+Solving Success Rate: 95%+ with 2Captcha
 
 🔧 Technical Specifications
 Requirements
-Python: 3.8+
+Python: 3.7+
 
 Browser Automation: Playwright with Chromium
+
+CAPTCHA Service: 2Captcha API key (optional)
 
 Memory: 2GB+ RAM recommended
 
@@ -196,7 +271,32 @@ Geographic information
 
 Compliance timelines
 
-Contact details (30+ fields)
+Contact details
+
+CAPTCHA solving metadata
+
+📈 Enterprise Integration
+Data Export
+Structured JSON format
+
+Batch processing capabilities
+
+Incremental extraction support
+
+Metadata enrichment
+
+CAPTCHA statistics reporting
+
+Monitoring & Analytics
+Extraction success rates
+
+Processing efficiency metrics
+
+Error pattern analysis
+
+Performance trend tracking
+
+CAPTCHA cost optimization
 
 🛠️ Operational Excellence
 Error Recovery
@@ -208,7 +308,9 @@ Graceful degradation
 
 Comprehensive diagnostics
 
-Maintenance Features
+CAPTCHA solving fallbacks
+
+Maintenance
 Regular dependency updates
 
 Extraction rule validation
@@ -217,82 +319,32 @@ Performance optimization
 
 Storage management
 
-🔒 Privacy & Legal Compliance
-Important Considerations
-Terms of Service: Respect Kansas SOS website terms
+CAPTCHA service monitoring
 
-Rate Limiting: Implement delays to avoid being blocked
+🔒 Privacy & Compliance
+CAPTCHA Service Terms
+Comply with 2Captcha terms of service
 
-Data Usage: Use extracted data responsibly
+Respect website CAPTCHA implementation
 
-CAPTCHA Solving: Comply with 2Captcha service terms
+Use automated solving responsibly
+
+Monitor usage to prevent abuse
 
 Best Practices
-Add appropriate delays between requests
+Implement appropriate delays
 
 Respect robots.txt directives
 
-Don't overload the server
+Don't overload target servers
 
-Use data for legitimate purposes only
+Use data for legitimate purposes
 
-Consider implementing user agent rotation
-
-🚀 Advanced Features
-Customization Options
-Field Selection: Modify extract_complete_business_data() to choose specific fields
-
-Parallel Processing: Implement ThreadPoolExecutor for faster crawling
-
-Proxy Support: Add proxy rotation to avoid IP blocking
-
-Database Storage: Modify save_business_data_completely() to store in SQL database
-
-Scheduled Runs: Add scheduling with cron or APScheduler
-
-Extending the Crawler
-python
-# Add new search terms
-search_terms = ["LLC", "INC", "CORP", "CO", "LP", "LLP", "PC"]
-
-# Add custom fields
-custom_fields = {
-    'tax_id': '#TaxIDSelector',
-    'license_number': '#LicenseSelector'
-}
-
-# Implement retry logic
-max_retries = 3
-retry_delay = 5
-📚 Dependencies
-Python Packages
-playwright: Browser automation
-
-twocaptcha: CAPTCHA solving service
-
-json: Data serialization
-
-logging: Application logging
-
-datetime: Timestamp handling
-
-re: Regular expressions
-
-os: File system operations
-
-Browser Requirements
-Chromium (installed via Playwright)
-
-2GB+ RAM recommended
-
-Stable internet connection
+Maintain CAPTCHA service ethics
 
 👨‍💻 Developer Information
 Rohan Subhash Darekar
-Python Developer
+Python Developer & Automation Specialist
 📞 +91 9075237180
 📧 rohandarekar307@gmail.com
 🔗 GitHub Profile
-
-
-
