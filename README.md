@@ -43,6 +43,7 @@ Homepage (sos.ks.gov) → CAPTCHA Check → Search Page → Automated Setup → 
 3. **Tertiary Method**: Text analysis and regular expression matching
 
 ### Project Structure
+
 kansas_business_data/
 ├── 📊 json/ # Individual business JSON files
 ├── 🔧 html_fallback/ # HTML files when JSON fails
@@ -51,7 +52,6 @@ kansas_business_data/
 ├── 📸 screenshots/ # Debug screenshots
 └── 📁 all_businesses_[timestamp].json # Combined dataset
 
-text
 
 ## 🚀 Getting Started
 
@@ -69,9 +69,11 @@ playwright install chromium
 
 # Optional: Set up 2Captcha API key
 export CAPTCHA_API_KEY="your_2captcha_api_key_here"
+
 Execution
-bash
+
 python sos_crawler.py
+
 📋 Default Search Configuration
 The system automatically processes these business entity types:
 
@@ -81,7 +83,7 @@ Corporate Entities	LLC, INC, CORP	Business structures
 Industry Focus	SERVICE, KANSAS	Regional and service businesses
 📊 Data Schema
 Business Entity Record
-json
+
 {
   "identification": {
     "business_id": "1234567",
@@ -109,26 +111,26 @@ json
     "data_completeness": "complete"
   }
 }
+
 ⚙️ Configuration
 Search Parameters
 Modify the search terms in the main execution method:
-
-python
 search_terms = ["AA", "AAB", "AAC", "LLC", "INC", "CORP", "SERVICE", "KANSAS"]
+
 Processing Limits
 Adjust the number of entities processed per search term:
-
-python
 # Process first 3 businesses per search term
 for business in businesses[:3]:
     process_business(business)
+
 CAPTCHA Configuration
-python
+
 # Enable 2Captcha service
 self.captcha_api_key = "your_2captcha_api_key"
 
 # Or use manual fallback
 self.solver = None  # Disable automated solving
+
 🎯 Performance Features
 Rate Management
 Configurable delays between requests (0.2-1.5 seconds)
@@ -246,7 +248,7 @@ Database Storage: Modify save_business_data_completely() to store in SQL databas
 Scheduled Runs: Add scheduling with cron or APScheduler
 
 Extending the Crawler
-python
+
 # Add new search terms
 search_terms = ["LLC", "INC", "CORP", "CO", "LP", "LLP", "PC"]
 
@@ -259,6 +261,7 @@ custom_fields = {
 # Implement retry logic
 max_retries = 3
 retry_delay = 5
+
 📚 Dependencies
 Python Packages
 playwright: Browser automation
