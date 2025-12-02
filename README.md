@@ -1,134 +1,102 @@
 Kansas SOS Business Data Crawler 🏢
 
-Automated Business Intelligence Extraction for Kansas Secretary of State
-
-📌 Table of Contents
-
-Overview
-
-Key Features
-
-Architecture
-
-Project Structure
-
-Getting Started
-
-Default Search Config
-
-Data Schema
-
-Configuration
-
-Performance Metrics
-
-Technical Specifications
-
-Operational Excellence
-
-Legal & Compliance
-
-Advanced Features
-
-Developer
+A comprehensive automation solution for business intelligence gathering from the Kansas Secretary of State website. This enterprise-grade tool systematically extracts business entity data with intelligent navigation, CAPTCHA solving, and professional output management.
 
 🚀 Overview
 
-The Kansas SOS Business Data Crawler is an enterprise-grade automation tool that extracts structured business intelligence from the Kansas Secretary of State website, including:
-
-Entity identification
-
-Jurisdiction & compliance details
-
-Contact information
-
-Filing timelines
-
-Metadata tracking
-
-Built with Playwright, 2Captcha, and robust fallback strategies.
+The Kansas SOS Business Crawler automates the extraction of business entity information through intelligent web navigation, multi-layered data extraction, and comprehensive error management. It transforms unstructured web data into structured, analyzable business intelligence.
 
 ✨ Key Features
 🤖 Intelligent Automation
 
-Smart human-like navigation
+Smart Navigation: Natural browsing from homepage to business search with CAPTCHA handling
 
-Adaptive element detection
+Form Automation: Automated search parameter configuration
 
-CAPTCHA solving (auto + manual fallback)
+Dynamic Detection: Adaptive element identification with multiple fallback strategies
 
-Form auto-filling
+CAPTCHA Management: Automatic solving with 2Captcha integration
 
 📊 Comprehensive Data Extraction
 
-Entity names, IDs, classifications
+Business Identification: Entity names, IDs, and registration details
 
-Registered agent & office addresses
+Entity Classification: Business types, status, and jurisdiction information
 
-Compliance & reporting deadlines
+Contact Information: Resident agents and complete office addresses
 
-Metadata & timestamps
+Compliance Data: Reporting requirements and filing deadlines
+
+Metadata: Extraction timestamps and source tracking
 
 🛡️ Enterprise Reliability
 
-Multi-layer error recovery
+Multi-layer Error Handling: Primary, secondary, and tertiary extraction methods
 
-Session persistence
+CAPTCHA Management: Automated solving with manual intervention fallback
 
-Quality assurance validation
+Session Persistence: Robust recovery from interruptions and timeouts
 
-Robust timeout handling
+Data Validation: Completeness checking and quality assurance
 
 💾 Professional Output
 
-Normalized JSON output
+Structured JSON: Clean, normalized business data (30+ fields)
 
-Hierarchical storage
+Hierarchical Storage: Organized by extraction status and data type
 
-Full audit logging
+Audit Trail: Comprehensive logging and activity monitoring
 
-HTML fallback for debugging
+HTML Fallback: Source preservation for debugging
 
 🏗️ Architecture
 Navigation Flow
 
-Homepage → CAPTCHA → Search Page → Input Parameters → Search Results → Business Details → JSON Storage
+Homepage → CAPTCHA Check → Search Page → Automated Setup → Search Execution → Results Processing → Business Detail Extraction → Storage
 
 Extraction Strategy
 
-Primary: CSS-based element extraction
+Primary Method: Direct CSS selector targeting
 
-Secondary: Table parsing
+Secondary Method: Table-based parsing & pattern recognition
 
-Tertiary: Regex & text interpretation
+Tertiary Method: Text analysis & regex matching
 
-📁 Project Structure
+Project Structure
 kansas_business_data/
-├── json/                 # Individual business JSON files
-├── html_fallback/        # Saved HTML pages if JSON fails
-├── errors/               # Extraction failures
-├── logs/                 # Application logs
-├── screenshots/          # Debug screenshots
+├── json/               # Individual business JSON files
+├── html_fallback/      # HTML files when JSON fails
+├── errors/             # Error logs and failed extractions
+├── logs/               # Application logs
+├── screenshots/        # Debug screenshots
 └── all_businesses_[timestamp].json
 
 🚀 Getting Started
-Clone & Install
+Installation
+# Clone repository
 git clone https://github.com/codingwithrsn33/Kansas-Site-Crawling.git
 cd Kansas-Site-Crawling
 
+# Install dependencies
 pip install playwright twocaptcha
+
+# Install browsers
 playwright install chromium
 
-Run
+# Optional: Set 2Captcha key
+export CAPTCHA_API_KEY="your_2captcha_api_key_here"
+
+Execution
 python sos_crawler.py
 
-📋 Default Search Config
+📋 Default Search Configuration
+Categories & Search Terms
 Category	Search Terms	Purpose
-Test Samples	AA, AAB, AAC	System validation
-Corporate Entities	LLC, INC, CORP	General business data
-Industry Focus	SERVICE, KANSAS	Local & service industry
+Test Samples	AA, AAB, AAC	Validation
+Corporate Entities	LLC, INC, CORP	Business data
+Industry Focus	SERVICE, KANSAS	Regional data
 📊 Data Schema
-Sample JSON Output
+Business Entity Record
 {
   "identification": {
     "business_id": "1234567",
@@ -158,34 +126,55 @@ Sample JSON Output
 }
 
 ⚙️ Configuration
-Search Terms
+Search Parameters
 search_terms = ["AA", "AAB", "AAC", "LLC", "INC", "CORP", "SERVICE", "KANSAS"]
 
-Limit Processed Businesses
+Processing Limits
 for business in businesses[:3]:
     process_business(business)
 
-CAPTCHA Setup
+CAPTCHA Configuration
 self.captcha_api_key = "your_2captcha_api_key"
-self.solver = None   # Enable manual solving
+self.solver = None   # Manual fallback
+
+🎯 Performance Features
+Rate Management
+
+Adaptive request timing
+
+Respectful crawling delays
+
+Quality Assurance
+
+Field validation
+
+Completeness scoring
+
+Cross-verification
+
+Monitoring
+
+Real-time status
+
+Analytics
+
+CAPTCHA stats
 
 📈 Performance Metrics
-Execution Speed
-Component	Fast Mode	Reliable Mode
+Time Estimates
+Component	Fast	Reliable
 Navigation	2–3 sec	5–10 sec
 Search Setup	1 sec	2–3 sec
 Results Extraction	1–2 sec	3–5 sec
 Business Detail	2–3 sec	5–8 sec
-Total	5 sec	15 sec
-2Captcha Cost Analysis
+Total / Business	~5 sec	~15 sec
+2Captcha Cost
 
-Cost per CAPTCHA → $0.00077
+Cost per CAPTCHA: $0.00077
 
-$2.87 balance → 3,726 CAPTCHAs
+With $2.87 → ≈ 3,726 CAPTCHAs
 
-Usage per business → 1–3 CAPTCHAs
-
-Total capacity → 1,200–3,700 businesses
+Businesses possible: 1,200 – 3,700
 
 🔧 Technical Specifications
 Requirements
@@ -196,53 +185,39 @@ Playwright + Chromium
 
 2GB RAM recommended
 
-Stable internet connection
+Supported Fields
 
-Extracted Fields (30+)
+30+ business data points
 
-IDs
-
-Names
-
-Status
-
-Addresses
-
-Dates
-
-Compliance info
+IDs, addresses, compliance info
 
 🛠️ Operational Excellence
 Error Recovery
 
 Automatic retries
 
-Fallback extraction layers
+Session preservation
 
-Session restoration
+Graceful fallback
 
 Maintenance
 
-Validation rule testing
+Rule validation
 
-Storage cleanup
+Storage optimization
 
 Dependency updates
 
 🔒 Privacy & Legal Compliance
 
-Please ensure you:
+Respect website ToS
 
-Respect Kansas SOS Terms of Service
+Rate limits
 
-Follow rate limits
-
-Use data ethically & legally
-
-Follow 2Captcha usage terms
+Use data ethically
 
 🚀 Advanced Features
-Add More Search Terms
+Custom Search Terms
 search_terms = ["LLC", "INC", "CORP", "CO", "LP", "LLP", "PC"]
 
 Add Custom Fields
@@ -255,12 +230,27 @@ Retry Logic
 max_retries = 3
 retry_delay = 5
 
-👨‍💻 Developer
+📚 Dependencies
+
+playwright
+
+twocaptcha
+
+json
+
+logging
+
+datetime
+
+re
+
+os
+
+👨‍💻 Developer Information
 
 Rohan Subhash Darekar
 Python Developer
-
 📞 +91 9075237180
 📧 rohandarekar307@gmail.com
 
-🔗 GitHub: https://github.com/codingwithrsn33
+🔗 GitHub Profile
