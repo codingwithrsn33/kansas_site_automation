@@ -1,0 +1,133 @@
+{
+  "total_companies": 10,
+  "search_terms_used": [
+    "AA",
+    "AAB",
+    "AAC",
+    "LLC",
+    "INC"
+  ],
+  "extraction_date": "2025-12-02T22:14:42.415597",
+  "companies": [
+    {
+      "business_id": "785139",
+      "business_name": "HAACK ENTERPRISES, L.P.",
+      "type": "Domestic Limited Partnership",
+      "status": "Dissolved",
+      "formation_date": "01/20/1983",
+      "resident_agent": "ROGER HAACK",
+      "address": "4136 WIMBLEDON DRIVE | LAWRENCE, KS 66046",
+      "search_term": "AA",
+      "extracted_at": "2025-12-02T22:07:46.945825",
+      "source_url": "https://www.sos.ks.gov/eforms/BusinessEntity/Search.aspx"
+    },
+    {
+      "business_id": "5466719",
+      "business_name": "'AA' PLACE FOR DOGS, INC.",
+      "type": "Domestic Not For-Profit Corporation",
+      "status": "Active and in Good Standing",
+      "formation_date": "07/16/2021",
+      "resident_agent": "Abigail  Warnke",
+      "address": "11000 King St | Overland Park, KS 66210",
+      "search_term": "AA",
+      "extracted_at": "2025-12-02T22:08:42.722379",
+      "source_url": "https://www.sos.ks.gov/eforms/BusinessEntity/Search.aspx"
+    },
+    {
+      "business_id": "4208260",
+      "business_name": "A ABLE DETOX-REHAB TREATMENT, INC.",
+      "type": "Foreign For-Profit Corporation",
+      "status": "Forfeited - Failed to Timely File I/R",
+      "formation_date": "06/04/2008",
+      "resident_agent": "BUSINESS FILINGS INTERNATIONAL, INC.",
+      "address": "210 WESTWOOD PLACE | BRENTWOOD, TN 37027",
+      "search_term": "AAB",
+      "extracted_at": "2025-12-02T22:09:07.217253",
+      "source_url": "https://www.sos.ks.gov/eforms/BusinessEntity/Search.aspx"
+    },
+    {
+      "business_id": "6616353",
+      "business_name": "A-AAA BONDING COMPANY L.L.C.",
+      "type": "Domestic Limited Liability Company",
+      "status": "Forfeited - Failed to Timely File I/R",
+      "formation_date": "02/10/2012",
+      "resident_agent": "A-AAA BONDING COMPANY L.L.C.",
+      "address": "PEARL NEAL | WICHITA, KS 67219",
+      "search_term": "AAB",
+      "extracted_at": "2025-12-02T22:09:16.844107",
+      "source_url": "https://www.sos.ks.gov/eforms/BusinessEntity/Search.aspx"
+    },
+    {
+      "business_id": "785139",
+      "business_name": "HAACK ENTERPRISES, L.P.",
+      "type": "Domestic Limited Partnership",
+      "status": "Dissolved",
+      "formation_date": "01/20/1983",
+      "resident_agent": "ROGER HAACK",
+      "address": "4136 WIMBLEDON DRIVE | LAWRENCE, KS 66046",
+      "search_term": "AAC",
+      "extracted_at": "2025-12-02T22:11:16.250138",
+      "source_url": "https://www.sos.ks.gov/eforms/BusinessEntity/Search.aspx"
+    },
+    {
+      "business_id": "131748",
+      "business_name": "A A C ELECTRIC CO., INC.",
+      "type": "Domestic For-Profit Corporation",
+      "status": "Forfeited - Failed to Timely File I/R",
+      "formation_date": "03/15/1956",
+      "resident_agent": "CHALDEE R. CRISP",
+      "address": "CHALDEE R CRISP | WICHITA, KS 67203",
+      "search_term": "AAC",
+      "extracted_at": "2025-12-02T22:11:26.623200",
+      "source_url": "https://www.sos.ks.gov/eforms/BusinessEntity/Search.aspx"
+    },
+    {
+      "business_id": "8234643",
+      "business_name": "FIRST IMPRESSION CLEANING & RESTORATION SOLUTIONS L.L.C.",
+      "type": "Domestic Limited Liability Company",
+      "status": "Forfeited - Failed to Timely File I/R",
+      "formation_date": "03/16/2016",
+      "resident_agent": "JAMES C BARFIELD",
+      "address": "2131  Edgemoor | WICHITA, KS 67208",
+      "search_term": "LLC",
+      "extracted_at": "2025-12-02T22:13:56.357599",
+      "source_url": "https://www.sos.ks.gov/eforms/BusinessEntity/Search.aspx"
+    },
+    {
+      "business_id": "6308621",
+      "business_name": "\" KS40 LLC \"",
+      "type": "Domestic Limited Liability Company",
+      "status": "Forfeited - Failed to Timely File I/R",
+      "formation_date": "01/27/2009",
+      "resident_agent": "THOMAS A. LEITCH",
+      "address": "GARY W. LEITCH | WICHITA, KS 67275",
+      "search_term": "LLC",
+      "extracted_at": "2025-12-02T22:14:06.997569",
+      "source_url": "https://www.sos.ks.gov/eforms/BusinessEntity/Search.aspx"
+    },
+    {
+      "business_id": "2193688",
+      "business_name": "CAPITAL CITY PALLET, INC.",
+      "type": "Domestic For-Profit Corporation",
+      "status": "Active and in Good Standing",
+      "formation_date": "09/30/1994",
+      "resident_agent": "CAPITOL CITY PALLET, INC.",
+      "address": "804 NE Hwy 24 | Topeka, KS 66608",
+      "search_term": "INC",
+      "extracted_at": "2025-12-02T22:14:33.506299",
+      "source_url": "https://www.sos.ks.gov/eforms/BusinessEntity/Search.aspx"
+    },
+    {
+      "business_id": "197764",
+      "business_name": "\" A \" PLUS HOME SERVICE, INC.",
+      "type": "Domestic For-Profit Corporation",
+      "status": "Forfeited - Failed to Timely File I/R",
+      "formation_date": "06/23/1971",
+      "resident_agent": "JOHN W. BRIMER",
+      "address": " | WICHITA, KS 67202",
+      "search_term": "INC",
+      "extracted_at": "2025-12-02T22:14:42.414586",
+      "source_url": "https://www.sos.ks.gov/eforms/BusinessEntity/Search.aspx"
+    }
+  ]
+}
